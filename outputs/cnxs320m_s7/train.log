@@ -1,0 +1,28 @@
+=== cnxs320m_s7 | arch=convnext_small.fb_in22k_ft_in1k size=320 folds=5 crop=True device=cuda ===
+normalisation mean=[0.485, 0.456, 0.406] std=[0.229, 0.224, 0.225]
+--- fold 1/5 (train=641 val=100) ---
+    [head 01/4] loss=1.2648 train_acc=0.5062 val_acc=0.7500
+    [head 02/4] loss=1.0182 train_acc=0.5547 val_acc=0.7400
+    [head 03/4] loss=1.0118 train_acc=0.5938 val_acc=0.8200
+    [head 04/4] loss=1.0166 train_acc=0.5922 val_acc=0.7900
+    [ft 01/40] loss=1.0062 train_acc=0.5906 val_acc=0.8100
+    [ft 02/40] loss=0.9653 train_acc=0.6781 val_acc=0.8200
+    [ft 03/40] loss=0.9568 train_acc=0.6750 val_acc=0.8500
+    [ft 04/40] loss=0.9357 train_acc=0.6734 val_acc=0.8100
+    [ft 05/40] loss=0.8415 train_acc=0.6266 val_acc=0.7800
+    [ft 06/40] loss=0.9070 train_acc=0.6687 val_acc=0.8700
+    [ft 07/40] loss=0.8577 train_acc=0.7031 val_acc=0.8900
+    [ft 08/40] loss=0.8458 train_acc=0.7016 val_acc=0.8600
+    [ft 09/40] loss=0.8402 train_acc=0.5906 val_acc=0.8800
+    [ft 10/40] loss=0.8076 train_acc=0.7406 val_acc=0.8500
+    [ft 11/40] loss=0.8647 train_acc=0.6469 val_acc=0.8900
+    [ft 12/40] loss=0.8564 train_acc=0.6422 val_acc=0.8600
+    [ft 13/40] loss=0.7919 train_acc=0.6438 val_acc=0.8700
+    [ft 14/40] loss=0.7954 train_acc=0.7672 val_acc=0.8700
+    [ft 15/40] loss=0.7640 train_acc=0.7391 val_acc=0.8800
+    [ft 16/40] loss=0.7365 train_acc=0.6687 val_acc=0.8700
+    [ft 17/40] loss=0.7295 train_acc=0.6984 val_acc=0.8700
+    [ft 18/40] loss=0.7904 train_acc=0.6719 val_acc=0.9000
+    [ft 19/40] loss=0.7213 train_acc=0.7141 val_acc=0.9100
+    [ft 20/40] loss=0.7433 train_acc=0.7484 val_acc=0.8900
+    [ft 21/40] loss=0.7298 train_acc=0.7375 val_acc=0.9100

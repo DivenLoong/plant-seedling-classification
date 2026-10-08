@@ -1,0 +1,83 @@
+{
+  "args": {
+    "arch": "convnext_tiny.fb_in22k_ft_in1k",
+    "size": 320,
+    "folds": 5,
+    "max_folds": 0,
+    "head_epochs": 4,
+    "ft_epochs": 40,
+    "batch_size": 24,
+    "lr": 0.0002,
+    "weight_decay": 0.05,
+    "label_smoothing": 0.1,
+    "mixup": 0.2,
+    "cutmix": 1.0,
+    "ema": 0.0,
+    "raug": true,
+    "raug_ops": 2,
+    "raug_mag": 9,
+    "no_crop": false,
+    "mask_bg": true,
+    "tag": "spec_bl_320",
+    "seed": 42,
+    "subset": "Black-grass,Loose Silky-bent",
+    "resume": true,
+    "pseudo": "D:\\\u673a\u5668\u5b66\u4e60\\2026task1\\outputs\\test_probs_v2.npz",
+    "pseudo_thresh": 0.9
+  },
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "classes": [
+    "Black-grass",
+    "Loose Silky-bent"
+  ],
+  "n_folds": 5,
+  "n_pseudo": 74,
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "accuracy": 0.875,
+      "macro_f1": 0.8749218261413383,
+      "best_val_acc": 0.9,
+      "minutes": 0.3519708792368571
+    },
+    {
+      "fold": 1,
+      "accuracy": 0.925,
+      "macro_f1": 0.9249530956848031,
+      "best_val_acc": 0.975,
+      "minutes": 2.6393776734670005
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.775,
+      "macro_f1": 0.7748592870544091,
+      "best_val_acc": 0.8,
+      "minutes": 2.5317353010177612
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.925,
+      "macro_f1": 0.9249530956848031,
+      "best_val_acc": 0.95,
+      "minutes": 2.39759015639623
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.775,
+      "macro_f1": 0.7748592870544091,
+      "best_val_acc": 0.8,
+      "minutes": 2.4715742309888205
+    }
+  ],
+  "oof_accuracy": 0.855,
+  "oof_macro_f1": 0.8549963749093727
+}

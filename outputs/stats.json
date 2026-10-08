@@ -1,0 +1,24 @@
+{
+  "mean": [
+    0.33072200095317844,
+    0.28430774952342425,
+    0.21737058398012554
+  ],
+  "std": [
+    0.11301824277362972,
+    0.11553715136559409,
+    0.12449775743469425
+  ],
+  "crop": {
+    "enabled": true,
+    "hue_center": 60.0,
+    "hue_tol": 35.0,
+    "sat_min": 0.2,
+    "val_min": 0.12,
+    "min_area_frac": 0.01,
+    "margin": 0.1,
+    "pad_to_square": true,
+    "max_side": 1024,
+    "cache_name": "crop_boxes.json"
+  }
+}

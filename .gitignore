@@ -1,0 +1,37 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+
+# ---- Editors / OS ----
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+
+# ---- Office lock files ----
+~$*
+
+# ---- Model weights (regenerate with train.py) ----
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# ---- Datasets (kept locally, too large for Git) ----
+dataset-for-task2/
+pool/
+data/
+Labels.csv
+
+# ---- Image caches built by build_cache.py ----
+outputs/imgcache_*/
+outputs/pool_*/
+
+# ---- Report & paper (deliberately not published in this repo) ----
+REPORT.md
+植物幼苗*.docx
+~$*.docx
+build_docx.py
+build_paper.py
+_render/
+_paper_render/

@@ -1,0 +1,55 @@
+{
+  "args": {
+    "arch": "efficientnet_b0",
+    "size": 288,
+    "folds": 5,
+    "max_folds": 0,
+    "head_epochs": 4,
+    "ft_epochs": 46,
+    "batch_size": 32,
+    "lr": 0.0002,
+    "mixup": 0.0,
+    "no_crop": false,
+    "tag": "b0_288",
+    "seed": 42
+  },
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "accuracy": 0.92,
+      "macro_f1": 0.9194505494505494,
+      "best_val_acc": 0.95,
+      "minutes": 3.873478134473165
+    },
+    {
+      "fold": 1,
+      "accuracy": 0.88,
+      "macro_f1": 0.8770692992644211,
+      "best_val_acc": 0.91,
+      "minutes": 3.995277766386668
+    },
+    {
+      "fold": 2,
+      "accuracy": 0.95,
+      "macro_f1": 0.949047305144866,
+      "best_val_acc": 0.95,
+      "minutes": 3.891171995798747
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9,
+      "macro_f1": 0.9019138755980862,
+      "best_val_acc": 0.93,
+      "minutes": 3.8625301639238994
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.92,
+      "macro_f1": 0.9157318741450068,
+      "best_val_acc": 0.93,
+      "minutes": 3.8366731842358908
+    }
+  ],
+  "oof_accuracy": 0.914,
+  "oof_macro_f1": 0.9132188978794098
+}

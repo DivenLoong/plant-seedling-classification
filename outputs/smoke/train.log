@@ -1,0 +1,27 @@
+=== smoke | arch=efficientnet_b0 size=224 folds=5 crop=True device=cuda ===
+normalisation mean=[0.3307, 0.2843, 0.2174] std=[0.113, 0.1155, 0.1245]
+--- fold 1/5 (train=400 val=100) ---
+=== smoke | arch=efficientnet_b0 size=224 folds=5 crop=True device=cuda ===
+normalisation mean=[0.3307, 0.2843, 0.2174] std=[0.113, 0.1155, 0.1245]
+--- fold 1/5 (train=400 val=100) ---
+    [head 01/1] loss=1.5509 train_acc=0.3125 val_acc=0.0000
+    [ft 01/6] loss=1.3800 train_acc=0.5052 val_acc=0.0000
+    [ft 02/6] loss=1.1166 train_acc=0.6745 val_acc=0.0100
+    [ft 03/6] loss=0.8636 train_acc=0.7812 val_acc=0.0100
+    [ft 04/6] loss=0.7203 train_acc=0.8307 val_acc=0.0100
+    [ft 05/6] loss=0.6456 train_acc=0.8438 val_acc=0.0100
+    [ft 06/6] loss=0.6145 train_acc=0.8620 val_acc=0.0100
+    best val_acc=0.0100 @ epoch 3/7
+=== smoke | arch=efficientnet_b0 size=224 folds=5 crop=True device=cuda ===
+normalisation mean=[0.3307, 0.2843, 0.2174] std=[0.113, 0.1155, 0.1245]
+--- fold 1/5 (train=400 val=100) ---
+    [head 01/1] loss=1.5509 train_acc=0.3125 val_acc=0.5100
+    [ft 01/8] loss=1.3921 train_acc=0.4922 val_acc=0.5600
+    [ft 02/8] loss=1.1578 train_acc=0.6458 val_acc=0.7300
+    [ft 03/8] loss=0.8794 train_acc=0.7682 val_acc=0.8000
+    [ft 04/8] loss=0.7011 train_acc=0.8281 val_acc=0.7800
+    [ft 05/8] loss=0.6008 train_acc=0.8620 val_acc=0.8200
+    [ft 06/8] loss=0.5461 train_acc=0.8880 val_acc=0.8400
+    [ft 07/8] loss=0.5577 train_acc=0.8620 val_acc=0.8400
+    [ft 08/8] loss=0.5389 train_acc=0.8750 val_acc=0.8500
+    best val_acc=0.8500 @ epoch 9/9

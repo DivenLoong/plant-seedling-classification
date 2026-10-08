@@ -1,0 +1,18 @@
+=== smoke2 | arch=convnext_tiny.fb_in22k_ft_in1k size=320 folds=5 crop=True device=cuda ===
+normalisation mean=[0.485, 0.456, 0.406] std=[0.229, 0.224, 0.225]
+--- fold 1/5 (train=400 val=100) ---
+    [head 01/1] loss=1.5640 train_acc=0.3177 val_acc=0.5300
+    [ft 01/1] loss=1.4068 train_acc=0.4453 val_acc=0.7200
+    final val_acc=0.7200 (best 0.7200 @ epoch 2/2)
+    fold 1 accuracy=0.2700 macro_f1=0.1797 (3.7 min)
+=== smoke2: OOF accuracy=0.2700 macro_f1=0.1797 ===
+=== smoke2 | arch=convnext_tiny.fb_in22k_ft_in1k size=320 folds=5 crop=True device=cuda ===
+normalisation mean=[0.485, 0.456, 0.406] std=[0.229, 0.224, 0.225]
+--- fold 1/5 (train=400 val=100) ---
+    [head 01/1] loss=1.5861 train_acc=0.2656 val_acc=0.4700
+    [ft 01/3] loss=1.3853 train_acc=0.4635 val_acc=0.7500
+    [ft 02/3] loss=1.1628 train_acc=0.4349 val_acc=0.8100
+    [ft 03/3] loss=1.0087 train_acc=0.4661 val_acc=0.8100
+    final val_acc=0.8100 (best 0.8100 @ epoch 3/4)
+    fold 1 accuracy=0.3300 macro_f1=0.2812 (0.9 min)
+=== smoke2: OOF accuracy=0.3300 macro_f1=0.2812 ===
