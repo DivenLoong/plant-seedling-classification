@@ -55,7 +55,7 @@ IMAGENET_STD = (0.229, 0.224, 0.225)
 # Colour used to fill the transparent border / background so it matches the soil rather
 # than the black that a naive RGBA->RGB conversion would produce.
 PAD_COLOUR = (124, 116, 104)
-CACHE_VERSION = "v2"
+CACHE_VERSION = "v3"   # v2 caches were built with the crop/resize order bug
 
 
 def ensure_dir(path: str) -> str:
@@ -224,13 +224,20 @@ def plant_box(img: Image.Image, cfg: CropConfig) -> Optional[Tuple[int, int, int
 def apply_crop(img: Image.Image, box: Optional[Tuple[int, int, int, int]],
                cfg: CropConfig, pad_colour: Tuple[int, int, int] = PAD_COLOUR
                ) -> Image.Image:
-    """Crop to ``box``, optionally pad to a square so leaf shape is preserved."""
+    """Crop to ``box``, optionally pad to a square so leaf shape is preserved.
+
+    Order matters and used to be wrong: the crop box is expressed in the coordinates of
+    the *original* image, so cropping must happen before any downscaling.  Downscaling
+    first made PIL fill everything outside the resized canvas with black, which silently
+    corrupted 97 of the 500 training images (every plant whose bounding box covered most
+    of the frame, i.e. exactly the confusable grass species).
+    """
+    if box is not None:
+        img = img.crop(box)
     if cfg.max_side and max(img.size) > cfg.max_side:
         ratio = cfg.max_side / max(img.size)
         img = img.resize((max(1, int(img.width * ratio)), max(1, int(img.height * ratio))),
                          Image.BILINEAR)
-    if box is not None:
-        img = img.crop(box)
     if cfg.mask_background:
         mask = green_mask(img, cfg)
         if mask.any():
@@ -444,10 +451,10 @@ class InferDS(_PlantMixin, Dataset):
 
 
 def make_loader(ds: Dataset, batch_size: int, shuffle: bool, num_workers: int,
-                drop_last: bool = False) -> DataLoader:
+                drop_last: bool = False, pin_memory: bool = True) -> DataLoader:
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle,
                       num_workers=num_workers, drop_last=drop_last,
-                      pin_memory=True, persistent_workers=num_workers > 0)
+                      pin_memory=pin_memory, persistent_workers=num_workers > 0)
 
 
 # --------------------------------------------------------------------------------------

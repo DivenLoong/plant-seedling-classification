@@ -184,7 +184,9 @@ def main() -> None:
         infer_ds = P.InferDS([(samples[i][0], i) for i in va_idx],
                              P.tta_views(cfg.size, mean, std), crop_cfg, boxes,
                              cache_dir=cache_dir)
-        infer_loader = P.make_loader(infer_ds, cfg.eval_batch_size, False, cfg.num_workers)
+        # TTA stacks 16 views per image, so a batch of 64 would need >1 GB of host RAM
+        # per batch; keep it small and single-process to stay well clear of the limit.
+        infer_loader = P.make_loader(infer_ds, 16, False, 0)
         probs, order = P.logits_for(model, infer_loader, device)
         for row, ds_idx in enumerate(order):
             global_idx = va_idx[ds_idx]

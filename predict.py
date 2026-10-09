@@ -81,8 +81,9 @@ def main() -> None:
                              scales=[float(s) for s in args.scales.split(",")],
                              rotations=args.rotations, flips=args.tta_flip))
         ds = P.InferDS(tests, views, crop_cfg, boxes, cache_dir=cache_dir)
-        loader = P.make_loader(ds, run_args.get("eval_batch_size", 64) or 64,
-                               False, run_args.get("num_workers", 2))
+        # A TTA batch holds ``views`` images per sample, so keep it small and avoid
+        # page-locked host memory to stay clear of host and device limits.
+        loader = P.make_loader(ds, 12, False, 2, pin_memory=False)
         run_weight = run_weights.get(tag, 1.0)
         run_total = None
         for fold in run["folds"]:
