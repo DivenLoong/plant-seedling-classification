@@ -27,6 +27,9 @@ Labels.csv
 outputs/imgcache_*/
 outputs/pool_*/
 
+# ---- Partial runs from a cancelled hyper-parameter sweep ----
+outputs/hp_*/
+
 # ---- Report & paper (deliberately not published in this repo) ----
 REPORT.md
 植物幼苗*.docx
